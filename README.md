@@ -1,109 +1,118 @@
-# goit-js-hw-01
+# goit-js-hw-03
 
-Задача 1. Замовлення дроїдів
+Задача 1. Генератор slug
 
-Завдання у файлі task-1.js
+Виконуй це завдання у файлі task-1.js
 
-Станція з продажу ремонтних дроїдів готова до запуску, залишилося написати
-програмне забезпечення для відділу продажів.
+Перш, ніж розв’язувати задачу, давай визначимося із новим терміном!
 
-Оголоси функцію makeTransaction, яка очікує два параметри, значення яких будуть
-задаватися під час її виклику: • quantity— перший параметр, число, що містить
-кількість замовлених дроїдів • pricePerDroid — другий параметр, число, що
-містить вартість одного дроїда
+Термін slug — це зрозумілий людині унікальний ідентифікатор, який
+використовується у веб розробці для створення читабельних URL-адрес.
 
-Доповни код функції так, щоб вона повертала рядок з повідомленням про покупку
-ремонтних дроїдів: "You ordered <quantity> droids worth <totalPrice> credits!",
-де: • <quantity> — це кількість замовлених дроїдів • <totalPrice> — це загальна
-вартість замовлення, тобто вартість усіх замовлених дроїдів
+Наприклад, замість того, щоб користувач побачив в адресному рядку
+mysite.com/posts/1q8fh74tx, можна зробити slug із назви статті. У результаті
+адреса буде приємнішою для сприйняття: mysite.com/posts/arrays-for-begginers.
 
-Візьми код нижче і встав після оголошення своєї функції для перевірки
-коректності її роботи. У консоль будуть виведені результати її роботи.
+Slug — це завжди рядок у нижньому регістрі, слова якого розділені тире.
 
-console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000
-credits!" console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth
-3000 credits!" console.log(makeTransaction(10, 500)); // "You ordered 10 droids
-worth 5000 credits!"
+З цим розібралися? А тепер давай нарешті виконувати задачу!
 
-Залиш цей код для перевірки ментором.
+Напиши функцію slugify(title), яка приймає заголовок статті, параметр title і
+повертає slug, створений із цього рядка.
 
-На що буде звертати увагу ментор при перевірці:
+Значенням параметра title будуть рядки, слова яких розділені лише пробілами. Усі
+символи slug повинні бути в нижньому регістрі. Усі слова slug повинні бути
+розділені тире. Візьми код нижче і встав після оголошення своєї функції для
+перевірки коректності її роботи. У консоль будуть виведені результати її роботи.
 
-Оголошена функція makeTransaction(quantity, pricePerDroid) Виклик
-makeTransaction(5, 3000) повертає "You ordered 5 droids worth 15000 credits!"
-Виклик makeTransaction(3, 1000) повертає "You ordered 3 droids worth 3000
-credits!" Виклик makeTransaction(10, 500) повертає "You ordered 10 droids worth
-5000 credits!" В консоль виведині всі результаті викликів Виклик makeTransaction
-з будь якими-валідними аргументами повертає правильне значення
-
----
-
-Задача 2. Доставка товару
-
-Завдання у файлі task-2.js
-
-Оголоси функцію getShippingMessage, яка очікує три параметри, значення яких
-будуть задаватися під час її виклику: • country — перший параметр, рядок, що
-містить країну доставки • price — другий параметр, число, що містить загальну
-вартість товару • deliveryFee — третій параметр, число, що містить вартість
-доставки товару
-
-Доповни код функції так, щоб вона повертала рядок з повідомленням про доставку
-товару в країну користувача: "Shipping to <country> will cost <totalPrice>
-credits", де: • <country> — це країни доставки • <totalPrice> — це загальна
-вартість замовлення, що включає вартість товару і його доставки
-
-Візьми код нижче і встав після оголошення своєї функції для перевірки
-коректності її роботи. У консоль будуть виведені результати її роботи.
-
-console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia
-will cost 170 credits" console.log(getShippingMessage("Germany", 80, 20)); //
-"Shipping to Germany will cost 100 credits"
-console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will
-cost 120 credits"
+console.log(slugify("Arrays for begginers")); // "arrays-for-begginers"
+console.log(slugify("English for developer")); // "english-for-developer"
+console.log(slugify("Ten secrets of JavaScript")); //
+"ten-secrets-of-javascript" console.log(slugify("How to become a JUNIOR
+developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
 
 Залиш цей код для перевірки ментором.
 
 На що буде звертати увагу ментор при перевірці:
 
-Оголошена функція getShippingMessage(country, price, deliveryFee) Виклик
-getShippingMessage("Australia", 120, 50) повертає "Shipping to Australia will
-cost 170 credits" Виклик getShippingMessage("Germany", 80, 20) повертає
-"Shipping to Germany will cost 100 credits" Виклик getShippingMessage("Sweden",
-100, 20) повертає "Shipping to Sweden will cost 120 credits" Виклик
-getShippingMessage з будь якими-валідними аргументами повертає правильне
-значення
+Оголошена функція slugify(title) Виклик slugify("Arrays for begginers") повертає
+"arrays-for-begginers" Виклик slugify("English for developer") повертає
+"english-for-developer" Виклик slugify("Ten secrets of JavaScript") повертає
+"ten-secrets-of-javascript" Виклик slugify("How to become a JUNIOR developer in
+TWO WEEKS") повертає "how-to-become-a-junior-developer-in-two-weeks"
 
----
+Задача 2. Композиція масивів
 
-Задача 3. Ширина елемента
+Виконуй це завдання у файлі task-2.js
 
-Завдання у файлі task-3.js
+Напиши функцію під назвою makeArray, яка приймає три параметри: firstArray
+(масив), secondArray (масив) і maxLength (число). Функція повинна створювати
+новий масив, який містить усі елементи з firstArray, а потім усі елементи з
+secondArray.
 
-Оголоси функцію getElementWidth, яка очікує три параметри, значення яких будуть
-задаватися під час її виклику: • content— перший параметр, ширина контенту •
-padding — другий параметр, значення горизонтального падінгу для кожної зі сторін
-• border — третій параметр, значення товщини бордера для кожної зі сторін
-Значення всіх параметрів будуть рядками формату Npx де N — це довільне число,
-ціле або дробове.
-
-Доповни код функції так, щоб вона повертала число —загальну ширину елемента. При
-розрахунку загальної ширини орієнтуйся на те, що значення box-sizing дорівнює
-border-box.
+Якщо кількість елементів у новому масиві перевищує maxLength, функція повинна
+повернути копію масиву з довжиною maxLength елементів. В іншому випадку функція
+повинна повернути весь новий масив.
 
 Візьми код нижче і встав після оголошення своєї функції для перевірки
 коректності її роботи. У консоль будуть виведені результати її роботи.
 
-console.log(getElementWidth("50px", "8px", "4px")); // 74
-console.log(getElementWidth("60px", "12px", "8.5px")); // 101
-console.log(getElementWidth("200px", "0px", "0px")); // 200
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango",
+"Poly", "Ajax"] console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax",
+"Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"]
+console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); //
+["Mango", "Ajax", "Chelsea"] console.log(makeArray(["Earth", "Jupiter"],
+["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"]
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); //
+["Earth", "Jupiter", "Neptune", "Uranus"] console.log(makeArray(["Earth",
+"Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
 
 Залиш цей код для перевірки ментором.
 
 На що буде звертати увагу ментор при перевірці:
 
-Оголошена функція getElementWidth(content, padding, border) Виклик
-getElementWidth("50px", "8px", "4px") повертає число 74 Виклик
-getElementWidth("60px", "12px", "8.5px") повертає число 101 Виклик
-getElementWidth("200px", "0px", "0px") повертає число 200 Виклик getElementWidth
-з будь якими-валідними аргументами повертає правильне значення
+Оголошена функція makeArray(firstArray, secondArray, maxLength) Виклик
+makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3) повертає ["Mango", "Poly",
+"Ajax"] Виклик makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)
+повертає ["Mango", "Poly", "Houston", "Ajax"] Виклик makeArray(["Mango"],
+["Ajax", "Chelsea", "Poly", "Houston"], 3) повертає ["Mango", "Ajax", "Chelsea"]
+Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2) повертає
+["Earth", "Jupiter"] Виклик makeArray(["Earth", "Jupiter"], ["Neptune",
+"Uranus"], 4) повертає ["Earth", "Jupiter", "Neptune", "Uranus"] Виклик
+makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0) повертає []
+Виклик функції makeArray() з випадковими масивами і випадковим числом повертає
+правильний масив
+
+Задача 3. Фільтрація масиву чисел
+
+Виконуй це завдання у файлі task-3.js
+
+Напиши функцію filterArray(numbers, value), яка приймає масив чисел (numbers) та
+значення (value) як параметри. Функція повинна повертати новий масив лише тих
+чисел із масиву numbers, які більші за значення value.
+
+Усередині функції:
+
+Створи порожній масив, у який будеш додавати підходящі числа. Використай цикл
+для ітерації кожного елемента масиву numbers. Використовуй умовний оператор if
+усередині циклу для перевірки кожного елемента и додавання до свого масиву.
+Поверни свій новий масив з підходящими числами як результат.
+
+Візьми код нижче і встав після оголошення своєї функції для перевірки
+коректності її роботи. У консоль будуть виведені результати її роботи.
+
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5] console.log(filterArray([1,
+2, 3, 4, 5], 5)); // [] console.log(filterArray([12, 24, 8, 41, 76], 38)); //
+[41, 76] console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+
+Залиш цей код для перевірки ментором.
+
+На що буде звертати увагу ментор при перевірці:
+
+Оголошена функція filterArray(numbers, value) Виклик функції filterArray([1, 2,
+3, 4, 5], 3) повертає [4, 5] Виклик функції filterArray([1, 2, 3, 4, 5], 4)
+повертає [5] Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає [] Виклик
+функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76] Виклик функції
+filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76] Виклик функції
+filterArray() з випадковим масивом і числом повертає правильний масив
